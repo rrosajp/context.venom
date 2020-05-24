@@ -127,8 +127,8 @@
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
 		<forum></forum>
-		<website></website>
-		<source></source>
+		<website>https://github.com/123Venom/context.venom</website>
+		<source>https://github.com/123Venom/context.venom</source>
 		<disclaimer lang="en"></disclaimer>
 		<assets>
 			<icon>icon.png</icon>
