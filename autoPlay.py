@@ -1,5 +1,6 @@
-import sys, xbmc, json
-import datetime
+import json
+import sys
+import xbmc
 
 try:
 	from urlparse import parse_qsl
@@ -10,21 +11,19 @@ except:
 
 if __name__ == '__main__':
 	item = sys.listitem
-	message = item.getLabel()
+	# message = item.getLabel()
 	path = item.getPath()
 	# xbmc.log('path = %s' % path, 2)
-	dt = (datetime.datetime.utcnow() - datetime.timedelta(hours = 5))
-	systime = (dt).strftime('%Y%m%d%H%M%S%f')
 	plugin = 'plugin://plugin.video.venom/'
 	args = path.split(plugin, 1)
 	params = dict(parse_qsl(args[1].replace('?', '')))
-	# xbmc.log('params = %s' % params, 2)
+
 	title = params['title']
 	systitle = quote_plus(title)
+	year = params.get('year', '')
 
 	if 'meta' in params:
 		meta = json.loads(params['meta'])
-		year = meta.get('year', '')
 		imdb = meta.get('imdb', '')
 		tvdb = meta.get('tvdb', '')
 		season = meta.get('season', '')
@@ -34,7 +33,6 @@ if __name__ == '__main__':
 		premiered = meta.get('premiered', '')
 
 	else:
-		year = params.get('year', '')
 		imdb = params.get('imdb', '')
 		tvdb = params.get('tvdb', '')
 		season = params.get('season', '')
@@ -46,10 +44,10 @@ if __name__ == '__main__':
 	sysmeta = quote_plus(json.dumps(meta))
 
 	if 'tvshowtitle' in meta:
-		url = '%s?action=play&title=%s&year=%s&imdb=%s&tvdb=%s&season=%s&episode=%s&tvshowtitle=%s&premiered=%s&meta=%s&t=%s' % (
-								plugin, systitle, year, imdb, tvdb, season, episode, systvshowtitle, premiered, sysmeta, systime)
+		url = '%s?action=play&title=%s&year=%s&imdb=%s&tvdb=%s&season=%s&episode=%s&tvshowtitle=%s&premiered=%s&meta=%s' % (
+								plugin, systitle, year, imdb, tvdb, season, episode, systvshowtitle, premiered, sysmeta)
 	else:
-		url = '%s?action=play&title=%s&year=%s&imdb=%s&meta=%s&t=%s' % (plugin, systitle, year, imdb, sysmeta, systime)
+		url = '%s?action=play&title=%s&year=%s&imdb=%s&meta=%s' % (plugin, systitle, year, imdb, sysmeta)
 
 	sysurl = quote_plus(url)
 	path = 'RunPlugin(%s?action=alterSources&url=%s&meta=%s)' % (plugin, sysurl, sysmeta)

@@ -1,4 +1,6 @@
-import sys, xbmc, json
+import json
+import sys
+import xbmc
 
 try:
 	from urlparse import parse_qsl
@@ -12,30 +14,29 @@ if __name__ == '__main__':
 	# message = item.getLabel()
 	path = item.getPath()
 	# xbmc.log('path = %s' % path, 2)
-
 	plugin = 'plugin://plugin.video.venom/'
 	args = path.split(plugin, 1)
 	params = dict(parse_qsl(args[1].replace('?', '')))
 
+	year = params.get('year', '')
+
 	if 'meta' in params:
 		meta = json.loads(params['meta'])
-		year = meta.get('year', '')
 		imdb = meta.get('imdb', '')
 		tmdb = meta.get('tmdb', '')
 		tvdb = meta.get('tvdb', '')
 		season = meta.get('season', '')
 		episode = meta.get('episode', '')
 		tvshowtitle = meta.get('tvshowtitle', '')
-		systvshowtitle = quote_plus(tvshowtitle)
 
 	else:
-		year = params.get('year', '')
 		imdb = params.get('imdb', '')
 		tmdb = params.get('tmdb', '')
 		tvdb = params.get('tvdb', '')
 		season = params.get('season', '')
 		episode = params.get('episode', '')
 		tvshowtitle = params.get('tvshowtitle', '')
-		systvshowtitle = quote_plus(tvshowtitle)
+
+	systvshowtitle = quote_plus(tvshowtitle)
 
 	xbmc.executebuiltin('RunPlugin(plugin://plugin.video.venom/?action=playEpisodesList&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&season=%s&episode=%s,return)' % (systvshowtitle, year, imdb, tmdb, tvdb, season, episode))
