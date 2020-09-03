@@ -34,9 +34,9 @@ class PropertiesUpdater(xbmc.Monitor):
 				xbmc.log('Context menu item disabled: {0}'.format(id),xbmc.LOGNOTICE)
 
 # start monitoring settings changes events
-xbmc.log('Context.Venom: service started', xbmc.LOGNOTICE)
+xbmc.log('[CONTEXT.VENOM]  service started', xbmc.LOGNOTICE)
 properties_monitor = PropertiesUpdater()
 
 # wait until abort is requested
 properties_monitor.waitForAbort()
-xbmc.log('Context.Venom: service stopped',xbmc.LOGNOTICE)
+xbmc.log('[CONTEXT.VENOM]  service stopped',xbmc.LOGNOTICE)
