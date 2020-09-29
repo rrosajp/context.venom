@@ -1,9 +1,14 @@
-import sys, xbmc, json
+# -*- coding: utf-8 -*-
+
+import json
+import sys
+import xbmc
 
 try:
 	from urlparse import parse_qsl
 except:
 	from urllib.parse import parse_qsl
+
 
 if __name__ == '__main__':
 	item = sys.listitem

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sys
 import xbmc
 
@@ -22,7 +24,7 @@ if __name__ == '__main__':
 	tvdb = params.get('tvdb', '')
 	season = params.get('season', '')
 	episode = params.get('episode', '')
-	tvshowtitle = params.get('tvshowtitle', '').encode('utf-8')
+	tvshowtitle = params.get('tvshowtitle', '')
 	systvshowtitle = quote_plus(tvshowtitle)
 
 # to browse by Progress

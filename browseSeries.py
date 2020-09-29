@@ -1,4 +1,8 @@
-import sys, xbmc, json
+# -*- coding: utf-8 -*-
+
+import json
+import sys
+import xbmc
 
 try:
 	from urlparse import parse_qsl
@@ -20,7 +24,7 @@ if __name__ == '__main__':
 	imdb = params.get('imdb', '')
 	tmdb = params.get('tmdb', '')
 	tvdb = params.get('tvdb', '')
-	tvshowtitle = params.get('tvshowtitle', '').encode('utf-8')
+	tvshowtitle = params.get('tvshowtitle', '')
 	systvshowtitle = quote_plus(tvshowtitle)
 
 	xbmc.executebuiltin('ActivateWindow(Videos,plugin://plugin.video.venom/?action=seasons&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s,return)' % (systvshowtitle, year, imdb, tmdb, tvdb))

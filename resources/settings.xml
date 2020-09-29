@@ -15,4 +15,9 @@
 		<setting label="30010" type="bool" id="context.venom.browseSeries" default="true"/>
 		<setting label="30011" type="bool" id="context.venom.browseEpisodes" default="true"/>
 	</category>
+
+	<category label="30014">
+		<setting label="30015" type="bool" id="checkAddonUpdates"  default="false" />
+	</category>
+
 </settings>

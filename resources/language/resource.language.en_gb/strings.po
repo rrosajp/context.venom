@@ -7,7 +7,7 @@ msgstr ""
 
 
 msgctxt "#30000"
-msgid "Options"
+msgid "Menu Items"
 msgstr ""
 
 msgctxt "#30001"
@@ -60,4 +60,12 @@ msgstr ""
 
 msgctxt "#30013"
 msgid "Clear Bookmark"
+msgstr ""
+
+msgctxt "#30014"
+msgid "Options"
+msgstr ""
+
+msgctxt "#30015"
+msgid "Notify Me About Available Updates"
 msgstr ""

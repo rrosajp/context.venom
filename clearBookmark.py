@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sys
 import xbmc
 
@@ -7,6 +9,7 @@ try:
 except:
 	from urllib.parse import parse_qsl
 	from urllib.parse import quote_plus
+
 
 if __name__ == '__main__':
 	item = sys.listitem

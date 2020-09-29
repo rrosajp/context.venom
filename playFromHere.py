@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import json
 import sys
 import xbmc
@@ -27,7 +29,7 @@ if __name__ == '__main__':
 		tvdb = meta.get('tvdb', '')
 		season = meta.get('season', '')
 		episode = meta.get('episode', '')
-		tvshowtitle = meta.get('tvshowtitle', '')
+		tvshowtitle = meta.get('tvshowtitle', '').encode('utf-8', 'ignore')
 
 	else:
 		imdb = params.get('imdb', '')
