@@ -27,6 +27,6 @@ if __name__ == '__main__':
 	season = params.get('season', '')
 	episode = params.get('episode', '')
 
-	path = 'RunPlugin(%s?action=traktManager&name=%s&imdb=%s&tvdb=%s&season=%s&episode=%s)' % (
+	path = 'RunPlugin(%s?action=tools_traktManager&name=%s&imdb=%s&tvdb=%s&season=%s&episode=%s)' % (
 				plugin, sysname, imdb, tvdb, season, episode)
 	xbmc.executebuiltin(path)

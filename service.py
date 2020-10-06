@@ -47,7 +47,7 @@ class AddonCheckUpdate:
 				return
 			repo_version = re.findall(r'<addon id=\"context.venom\".+version=\"(\d*.\d*.\d*)\"', repo_xml.text)[0]
 			local_version = xbmcaddon.Addon('context.venom').getAddonInfo('version')
-			if check_version_numbers(local_version, repo_version):
+			if self.check_version_numbers(local_version, repo_version):
 				while xbmc.getCondVisibility('Library.IsScanningVideo'):
 					xbmc.sleep(10000)
 				xbmc.log('[ context.venom ]  A newer version is available. Installed Version: v%s, Repo Version: v%s' % (local_version, repo_version), xbmc.LOGNOTICE)
@@ -58,7 +58,7 @@ class AddonCheckUpdate:
 			traceback.print_exc()
 			pass
 
-	def check_version_numbers(current, new):
+	def check_version_numbers(self, current, new):
 		# Compares version numbers and return True if new version is newer
 		current = current.split('.')
 		new = new.split('.')
