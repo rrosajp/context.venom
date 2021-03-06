@@ -3,18 +3,15 @@
 import sys
 import xbmc
 
-try:
+try: #Py2
 	from urlparse import parse_qsl
 	from urllib import quote_plus
-except:
-	from urllib.parse import parse_qsl
-	from urllib.parse import quote_plus
-
+except ImportError: #Py3
+	from urllib.parse import parse_qsl, quote_plus
 
 if __name__ == '__main__':
 	item = sys.listitem
 	path = item.getPath()
-	# xbmc.log('path = %s' % path, 2)
 	plugin = 'plugin://plugin.video.venom/'
 	args = path.split(plugin, 1)
 	params = dict(parse_qsl(args[1].replace('?', '')))

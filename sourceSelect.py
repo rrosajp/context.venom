@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
-import json
+from json import dumps as jsdumps, loads as jsloads
 import sys
 import xbmc
 
-try:
+try: #Py2
 	from urlparse import parse_qsl
 	from urllib import quote_plus
-except:
+except ImportError: #Py3
 	from urllib.parse import parse_qsl, quote_plus
 
 
@@ -15,7 +15,6 @@ if __name__ == '__main__':
 	item = sys.listitem
 	# message = item.getLabel()
 	path = item.getPath()
-	# xbmc.log('path = %s' % path, 2)
 	plugin = 'plugin://plugin.video.venom/'
 	args = path.split(plugin, 1)
 	params = dict(parse_qsl(args[1].replace('?', '')))
@@ -25,7 +24,7 @@ if __name__ == '__main__':
 	year = params.get('year', '')
 
 	if 'meta' in params:
-		meta = json.loads(params['meta'])
+		meta = jsloads(params['meta'])
 		imdb = meta.get('imdb', '')
 		tvdb = meta.get('tvdb', '')
 		season = meta.get('season', '')
@@ -43,7 +42,7 @@ if __name__ == '__main__':
 		systvshowtitle = quote_plus(tvshowtitle)
 		premiered = params.get('premiered', '')
 
-	sysmeta = quote_plus(json.dumps(meta))
+	sysmeta = quote_plus(jsdumps(meta))
 	if 'tvshowtitle' in meta:
 		url = '%s?action=play&title=%s&year=%s&imdb=%s&tvdb=%s&season=%s&episode=%s&tvshowtitle=%s&premiered=%s&meta=%s' % (
 								plugin, systitle, year, imdb, tvdb, season, episode, systvshowtitle, premiered, sysmeta)

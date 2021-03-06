@@ -1,3 +1,6 @@
+[B][COLOR red]Update - v1.1.1 - March 06, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Matrix(py3) compatibility update.[/I]
+
 [B][COLOR red]Update - v1.1.0 - Oct. 05, 2020[/COLOR][/B]
 [COLOR yellow]--[/COLOR][I] Service module cleanup.[/I]
 [COLOR yellow]--[/COLOR][I] Changed to new fanart.[/I]

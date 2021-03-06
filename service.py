@@ -19,7 +19,7 @@ properties = [
 
 def getKodiVersion():
 	return int(xbmc.getInfoLabel("System.BuildVersion")[:2])
-LOGNOTICE = xbmc.LOGNOTICE if getKodiVersion() < 19 else xbmc.LOGINFO
+LOGNOTICE = xbmc.LOGNOTICE if getKodiVersion() < 19 else xbmc.LOGINFO # (2 in 18, deprecated in 19 use LOGINFO(1))
 
 
 class PropertiesUpdater(xbmc.Monitor):
