@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from json import dumps as jsdumps, loads as jsloads
 import sys
 import xbmc
 
@@ -25,9 +26,11 @@ if __name__ == '__main__':
 	episode = params.get('episode', '')
 	tvshowtitle = params.get('tvshowtitle', '')
 	systvshowtitle = quote_plus(tvshowtitle)
+	meta = jsloads(params['meta'])
+	sysmeta = quote_plus(jsdumps(meta))
 
 # to browse by Progress
-	xbmc.executebuiltin('ActivateWindow(Videos,plugin://plugin.video.venom/?action=episodes&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&season=%s&episode=%s,return)' % (systvshowtitle, year, imdb, tmdb, tvdb, season, episode))
+	xbmc.executebuiltin('ActivateWindow(Videos,plugin://plugin.video.venom/?action=episodes&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&meta=%s&season=%s&episode=%s,return)' % (systvshowtitle, year, imdb, tmdb, tvdb, sysmeta, season, episode))
 
 # # to browse full episode list
-	# xbmc.executebuiltin('ActivateWindow(Videos,plugin://plugin.video.venom/?action=episodes&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&season=%s,return)' % (systvshowtitle, year, imdb, tmdb, tvdb, season))
+	# xbmc.executebuiltin('ActivateWindow(Videos,plugin://plugin.video.venom/?action=episodes&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&meta=%s&season=%s,return)' % (systvshowtitle, year, imdb, tmdb, tvdb, sysmeta, season))

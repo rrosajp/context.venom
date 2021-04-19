@@ -40,4 +40,5 @@ if __name__ == '__main__':
 
 	systvshowtitle = quote_plus(tvshowtitle)
 
+	# art was added to this venom function, test
 	xbmc.executebuiltin('RunPlugin(plugin://plugin.video.venom/?action=playEpisodesList&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&season=%s&episode=%s,return)' % (systvshowtitle, year, imdb, tmdb, tvdb, season, episode))
