@@ -3,7 +3,6 @@
 from json import dumps as jsdumps, loads as jsloads
 import sys
 import xbmc
-
 try: #Py2
 	from urlparse import parse_qsl
 	from urllib import quote_plus

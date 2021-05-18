@@ -50,8 +50,19 @@ class AddonCheckUpdate:
 				xbmc.log('[ context.venom ]  Could not connect to remote repo XML: status code = %s' % repo_xml.status_code, LOGNOTICE)
 				return
 			repo_version = re.findall(r'<addon id=\"context.venom\".+version=\"(\d*.\d*.\d*)\"', repo_xml.text)[0]
-			local_version = xbmcaddon.Addon('context.venom').getAddonInfo('version')
-			if self.check_version_numbers(local_version, repo_version):
+			local_version = xbmcaddon.Addon('context.venom').getAddonInfo('version')[:5] # 5 char max so pre-releases do try to compare more chars than github version
+			def check_version_numbers(self, current, new): # Compares version numbers and return True if github version is newer
+				current = current.split('.')
+				new = new.split('.')
+				step = 0
+				for i in current:
+					if int(new[step]) > int(i): return True
+					if int(i) > int(new[step]): return False
+					if int(i) == int(new[step]):
+						step += 1
+						continue
+				return False
+			if check_version_numbers(local_version, repo_version):
 				while xbmc.getCondVisibility('Library.IsScanningVideo'):
 					xbmc.sleep(10000)
 				xbmc.log('[ context.venom ]  A newer version is available. Installed Version: v%s, Repo Version: v%s' % (local_version, repo_version), LOGNOTICE)
@@ -60,22 +71,6 @@ class AddonCheckUpdate:
 		except:
 			import traceback
 			traceback.print_exc()
-
-	def check_version_numbers(self, current, new):
-		# Compares version numbers and return True if new version is newer
-		current = current.split('.')
-		new = new.split('.')
-		step = 0
-		for i in current:
-			if int(new[step]) > int(i):
-				return True
-			if int(i) > int(new[step]):
-				return False
-			if int(i) == int(new[step]):
-				step += 1
-				continue
-		return False
-
 
 if xbmcaddon.Addon().getSetting('checkAddonUpdates') == 'true':
 	AddonCheckUpdate().run()

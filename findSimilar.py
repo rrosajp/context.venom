@@ -2,12 +2,10 @@
 
 import sys
 import xbmc
-
 try: #Py2
 	from urlparse import parse_qsl
 except ImportError: #Py3
 	from urllib.parse import parse_qsl
-
 
 if __name__ == '__main__':
 	item = sys.listitem
