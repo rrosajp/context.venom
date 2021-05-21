@@ -6,4 +6,4 @@ if __name__ == '__main__':
 	plugin = 'plugin://plugin.video.venom/'
 	path = 'RunPlugin(%s?action=tools_contextVenomSettings&opensettings=false)' % plugin
 	xbmc.executebuiltin(path)
-	xbmc.executebuiltin('RunPlugin(%s?action=widgetRefresh)' % plugin)
+	# xbmc.executebuiltin('RunPlugin(%s?action=widgetRefresh)' % plugin) #now part of "tools_contextVenomSettings" action

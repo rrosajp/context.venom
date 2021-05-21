@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from json import dumps as jsdumps, loads as jsloads
+# from json import dumps as jsdumps, loads as jsloads
 import sys
 import xbmc
 try: #Py2
@@ -23,15 +23,6 @@ if __name__ == '__main__':
 	tvdb = params.get('tvdb', '')
 	tvshowtitle = params.get('tvshowtitle', '')
 	systvshowtitle = quote_plus(tvshowtitle)
-	meta = jsloads(params['meta'])
-	art = {}
-	art['fanart'] = meta.get('fanart')
-	art['icon'] = meta.get('icon')
-	art['thumb'] = meta.get('thumb')
-	art['banner'] = meta.get('banner')
-	art['clearlogo'] = meta.get('clearlogo')
-	art['clearart'] = meta.get('clearart')
-	art['landscape'] = meta.get('landscape')
-	sysart = quote_plus(jsdumps(art))
+	sysart = quote_plus(params.get('art', '')) if params.get('art') else ''
 
 	xbmc.executebuiltin('ActivateWindow(Videos,plugin://plugin.video.venom/?action=seasons&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&art=%s,return)' % (systvshowtitle, year, imdb, tmdb, tvdb, sysart))

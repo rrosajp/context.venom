@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from json import loads as jsloads
+from json import dumps as jsdumps, loads as jsloads
 import sys
 import xbmc
 try: #Py2
@@ -26,7 +26,7 @@ if __name__ == '__main__':
 		tvdb = meta.get('tvdb', '')
 		season = meta.get('season', '')
 		episode = meta.get('episode', '')
-		tvshowtitle = meta.get('tvshowtitle', '').encode('utf-8', 'ignore')
+		tvshowtitle = meta.get('tvshowtitle', '')
 	else:
 		imdb = params.get('imdb', '')
 		tmdb = params.get('tmdb', '')
@@ -36,6 +36,6 @@ if __name__ == '__main__':
 		tvshowtitle = params.get('tvshowtitle', '')
 
 	systvshowtitle = quote_plus(tvshowtitle)
+	sysmeta = quote_plus(jsdumps(meta))
 
-	# art was added to this venom function, test
-	xbmc.executebuiltin('RunPlugin(plugin://plugin.video.venom/?action=playEpisodesList&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&season=%s&episode=%s,return)' % (systvshowtitle, year, imdb, tmdb, tvdb, season, episode))
+	xbmc.executebuiltin('RunPlugin(plugin://plugin.video.venom/?action=playEpisodesList&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&meta=%s&season=%s&episode=%s,return)' % (systvshowtitle, year, imdb, tmdb, tvdb, sysmeta, season, episode))
