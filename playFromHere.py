@@ -38,4 +38,4 @@ if __name__ == '__main__':
 	systvshowtitle = quote_plus(tvshowtitle)
 	sysmeta = quote_plus(jsdumps(meta))
 
-	xbmc.executebuiltin('RunPlugin(plugin://plugin.video.venom/?action=playEpisodesList&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&meta=%s&season=%s&episode=%s,return)' % (systvshowtitle, year, imdb, tmdb, tvdb, sysmeta, season, episode))
+	xbmc.executebuiltin('RunPlugin(plugin://plugin.video.venom/?action=play_EpisodesList&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&meta=%s&season=%s&episode=%s,return)' % (systvshowtitle, year, imdb, tmdb, tvdb, sysmeta, season, episode))

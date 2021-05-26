@@ -3,13 +3,11 @@
 from json import dumps as jsdumps, loads as jsloads
 import sys
 import xbmc
-
 try: #Py2
 	from urlparse import parse_qsl
 	from urllib import quote_plus
 except ImportError: #Py3
 	from urllib.parse import parse_qsl, quote_plus
-
 
 if __name__ == '__main__':
 	item = sys.listitem
@@ -44,10 +42,10 @@ if __name__ == '__main__':
 
 	sysmeta = quote_plus(jsdumps(meta))
 	if 'tvshowtitle' in meta:
-		url = '%s?action=play&title=%s&year=%s&imdb=%s&tvdb=%s&season=%s&episode=%s&tvshowtitle=%s&premiered=%s&meta=%s' % (
+		url = '%s?action=play_Item&title=%s&year=%s&imdb=%s&tvdb=%s&season=%s&episode=%s&tvshowtitle=%s&premiered=%s&meta=%s' % (
 								plugin, systitle, year, imdb, tvdb, season, episode, systvshowtitle, premiered, sysmeta)
 	else:
-		url = '%s?action=play&title=%s&year=%s&imdb=%s&meta=%s' % (plugin, systitle, year, imdb, sysmeta)
+		url = '%s?action=play_Item&title=%s&year=%s&imdb=%s&meta=%s' % (plugin, systitle, year, imdb, sysmeta)
 
 	sysurl = quote_plus(url)
 	path = 'RunPlugin(%s?action=alterSources&url=%s&meta=%s)' % (plugin, sysurl, sysmeta)

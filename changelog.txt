@@ -1,3 +1,9 @@
+
+[B][COLOR red]Update - v1.1.6 - May 26, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Update "Browse Series" to reflect "tvshow.clearart" and "tvshow.clearlogo"
+    changes in Venom  This is only seen when Venom is set to "Direct Progress Scraping"
+    and "Browse Serires" is chosen.[/I]
+
 [B][COLOR red]Update - v1.1.5 - May 21, 2021[/COLOR][/B]
 [COLOR yellow]--[/COLOR][I] Fixed "Browse Series" and "Play from Here".[/I]
 

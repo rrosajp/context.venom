@@ -44,6 +44,6 @@ if __name__ == '__main__':
 		if tvshowtitle: premiered = params.get('premiered', '')
 
 	sysmeta = quote_plus(jsdumps(meta))
-	path = 'PlayMedia(%s?action=play&title=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&season=%s&episode=%s&tvshowtitle=%s&premiered=%s&meta=%s&rescrape=true)' % (
+	path = 'PlayMedia(%s?action=play_Item&title=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&season=%s&episode=%s&tvshowtitle=%s&premiered=%s&meta=%s&rescrape=true)' % (
 									plugin, systitle, year, imdb, tmdb, tvdb, season, episode, systvshowtitle, premiered, sysmeta)
 	xbmc.executebuiltin(path)
