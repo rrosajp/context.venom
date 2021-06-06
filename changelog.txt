@@ -1,7 +1,7 @@
 
-[B][COLOR red]Update - v1.1.7 - June 03, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] "Clear Providers" is now availble for Library Items via context menu for
-    items added from the Venom addon.[/I]
+[B][COLOR red]Update - v1.1.7 - June 06, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Added "Clear Providers" to now be visible from within the Kodi Library for
+    for items that have been added from Venom addon.[/I]
 
 [B][COLOR red]Update - v1.1.6 - May 26, 2021[/COLOR][/B]
 [COLOR yellow]--[/COLOR][I] Update "Browse Series" to reflect "tvshow.clearart" and "tvshow.clearlogo"
