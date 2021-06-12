@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import xbmc
+from xbmc import getInfoLabel, executebuiltin
 try: #Py2
 	from urlparse import parse_qsl
 	from urllib import quote_plus
@@ -12,6 +12,7 @@ if __name__ == '__main__':
 	item = sys.listitem
 	# message = item.getLabel()
 	path = item.getPath()
+
 	plugin = 'plugin://plugin.video.venom/'
 	args = path.split(plugin, 1)
 	params = dict(parse_qsl(args[1].replace('?', '')))
@@ -23,6 +24,9 @@ if __name__ == '__main__':
 	season = params.get('season', '')
 	episode = params.get('episode', '')
 
-	path = 'RunPlugin(%s?action=tools_traktManager&name=%s&imdb=%s&tvdb=%s&season=%s&episode=%s)' % (
-				plugin, sysname, imdb, tvdb, season, episode)
-	xbmc.executebuiltin(path)
+	playcount = getInfoLabel('ListItem.Playcount')
+	watched = (int(playcount) >= 1) if playcount else False
+
+	path = 'RunPlugin(%s?action=tools_traktManager&name=%s&imdb=%s&tvdb=%s&season=%s&episode=%s&watched=%s)' % (
+				plugin, sysname, imdb, tvdb, season, episode, watched)
+	executebuiltin(path)
