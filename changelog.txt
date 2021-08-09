@@ -1,4 +1,7 @@
 
+[B][COLOR red]Update - v1.2.0 - June 12, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] Fix for missing tvshow_poster that breaks [B]Browse Series[/B] when Venom addon is set to [B]Direct Progress Scraping[/B].[/I]
+
 [B][COLOR red]Update - v1.1.9 - June 12, 2021[/COLOR][/B]
 [COLOR yellow]--[/COLOR][I] "Trakt Manager" updated for changed to Venom addon.[/I]
 
