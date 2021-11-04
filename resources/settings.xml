@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <settings>
+	<!-- Menu Items - 0 -->
 	<category label="30000">
-<!-- 		<setting label="30001" type="bool" id="general.on.back" default="true"/> -->
+		<!-- <setting label="30001" type="bool" id="general.on.back" default="true" /> -->
 		<setting type="lsep" label="30002" />
-		<setting label="30012" type="bool" id="context.venom.settings" default="true"/>
-		<setting label="30003" type="bool" id="context.venom.traktManager" default="true"/>
-		<setting label="30004" type="bool" id="context.venom.clearProviders" default="true"/>
-		<setting label="30013" type="bool" id="context.venom.clearBookmark" default="true"/>
-		<setting label="30005" type="bool" id="context.venom.rescrape" default="true"/>
-		<setting label="30006" type="bool" id="context.venom.playFromHere" default="true"/>
-		<setting label="30007" type="bool" id="context.venom.autoPlay" default="true"/>
-		<setting label="30008" type="bool" id="context.venom.sourceSelect" default="true"/>
-		<setting label="30009" type="bool" id="context.venom.findSimilar" default="true"/>
-		<setting label="30010" type="bool" id="context.venom.browseSeries" default="true"/>
-		<setting label="30011" type="bool" id="context.venom.browseEpisodes" default="true"/>
+		<setting id="context.venom.settings" label="30012" type="bool" default="true" />
+		<setting id="context.venom.traktManager" label="30003" type="bool" default="true" />
+		<setting id="context.venom.clearProviders" label="30004" type="bool" default="true" />
+		<setting id="context.venom.clearBookmark" label="30013" type="bool" default="true" />
+		<setting id="context.venom.rescrape" label="30005" type="bool" default="true" />
+		<setting id="context.venom.rescrape2" label="30016" type="bool" subsetting="true" default="false" visible="eq(-1,true)" />
+		<setting id="context.venom.rescrape3" label="30017" type="select" subsetting="true" lvalues="30018|30019|30020|30021" default="3" visible="eq(-1,true)" />
+		<setting id="context.venom.playFromHere" label="30006" type="bool" default="true" />
+		<setting id="context.venom.autoPlay" label="30007" type="bool" default="true" />
+		<setting id="context.venom.sourceSelect" label="30008" type="bool" default="true" />
+		<setting id="context.venom.findSimilar" label="30009" type="bool" default="true" />
+		<setting id="context.venom.browseSeries" label="30010" type="bool" default="true" />
+		<setting id="context.venom.browseEpisodes" label="30011" type="bool" default="true" />
 	</category>
-
+	<!-- Options - 1 -->
 	<category label="30014">
-		<setting label="30015" type="bool" id="checkAddonUpdates"  default="false" />
+		<setting id="checkAddonUpdates" label="30015" type="bool" default="false" />
 	</category>
-
 </settings>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.2.0">
+<addon id="context.venom" name="Venom - Global Context Menu Items" provider-name="Venom" version="1.2.1">
 	<requires>
 		<import addon="script.module.requests" version="2.19.1" />
 	</requires>
@@ -135,8 +135,8 @@
 			<screenshot></screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v1.2.0 - June 12, 2021[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Fix for missing tvshow_poster that breaks [B]Browse Series[/B] when Venom addon is set to [B]Direct Progress Scraping[/B].[/I]
+[B][COLOR red]Update - v1.2.1 - Nov. 04, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] The "Rescrape Item" context menu now has a pop-up select method of 4 possible choices to rescrape.  You can set a preferred default action in the settings to bypass the select dialog pop up.[/I]
 		</news>
 	</extension>
 </addon>

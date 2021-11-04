@@ -1,4 +1,7 @@
 
+[B][COLOR red]Update - v1.2.1 - Nov. 04, 2021[/COLOR][/B]
+[COLOR yellow]--[/COLOR][I] The "Rescrape Item" context menu now has a pop-up select method of 4 possible choices to rescrape.  You can set a preferred default action in the settings to bypass the select dialog pop up.[/I]
+
 [B][COLOR red]Update - v1.2.0 - June 12, 2021[/COLOR][/B]
 [COLOR yellow]--[/COLOR][I] Fix for missing tvshow_poster that breaks [B]Browse Series[/B] when Venom addon is set to [B]Direct Progress Scraping[/B].[/I]
 

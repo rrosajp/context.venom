@@ -69,3 +69,27 @@ msgstr ""
 msgctxt "#30015"
 msgid "Notify Me About Available Updates"
 msgstr ""
+
+msgctxt "#30016"
+msgid "Use default option vs Menu"
+msgstr ""
+
+msgctxt "#30017"
+msgid "selected default"
+msgstr ""
+
+msgctxt "#30018"
+msgid "Rescrape Item - AutoPlay"
+msgstr ""
+
+msgctxt "#30019"
+msgid "Rescrape Item - Source Select"
+msgstr ""
+
+msgctxt "#30020"
+msgid "Rescrape Item with All Providers - AutoPlay"
+msgstr ""
+
+msgctxt "#30021"
+msgid "Rescrape Item with All Providers - Source Select"
+msgstr ""
